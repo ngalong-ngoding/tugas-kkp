@@ -1,5 +1,5 @@
 import { Calendar, CalendarClock, RotateCcwClock, RotateCwSquare } from "lucide-react";
-import { jamLembur } from "../utils/lembur";
+import { jamLembur } from "@/utils/lembur";
 
 const dataDummy_card = [
     {
