@@ -35,7 +35,7 @@ const CardStatData = [
 const CardStatList = () => {
 return (
 
-    <div className="flex gap-4 justify-between mt-4">
+    <div className="flex gap-4 justify-between">
         {CardStatData.map((item, index) => (
          <CardStat key={index} {...item} />
         ))}
