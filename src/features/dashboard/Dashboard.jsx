@@ -39,7 +39,7 @@ const Dashboard = () => {
 
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col h-full ">
       <div className="bg-gray-100 rounded-4xl w-full flex justify-between items-center p-4">
         <div className="flex gap-3 items-center">
           <IconInfo icon={User} />
@@ -74,7 +74,7 @@ const Dashboard = () => {
 
         {/* Presentase lembur */}
         <div className="flex gap-4">
-          <div className="w-full rounded-lg shadow-xl bg-white mt-6 p-4">
+          <div className="w-full  flex flex-col rounded-lg shadow-xl bg-white mt-6 p-4">
             <div className="flex items-start justify-between mb-6">
               <div>
                 <h3 className="text-xl font-semibold">Persentase Lembur Bulanan</h3>
@@ -82,8 +82,8 @@ const Dashboard = () => {
               </div>
               <Calendar />
             </div>
-            <div className="flex flex-col items-center justify-center border  p-2">
-              <div className="relative flex items-center justify-center  border" >
+            <div className="flex flex-col h-full items-center justify-center border  p-2">
+              <div className="relative  justify-center  border" >
                 <svg className=" transform border w-40 h-40 -rotate-90" viewBox="0 0 100 100">
                   <circle
                     cx="50"
@@ -107,7 +107,7 @@ const Dashboard = () => {
                   />
                 </svg>
 
-                <div className="absolute flex flex-col items-center justify-center text-center">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center text-center">
                   <span className="text-3xl font-extrabold text-gray-900">
                     {presentaseLembur}%
                   </span>
