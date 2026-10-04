@@ -1,5 +1,5 @@
 import { GalleryVertical, LayoutDashboard, LogOut, NotebookPen, RotateCcwClock, Settings } from "lucide-react"
-import Menu from "../Menu"
+import Menu from "../../components/Menu"
 
 const SideBar = () => {
   return (

@@ -1,4 +1,4 @@
-import Calendar  from "../../../components/Calendar";
+import Calendar from "@/components/Calendar";
 import { Calendar as CalendarIcon, Pencil } from "lucide-react";
 import { useState } from "react";
 
@@ -7,13 +7,13 @@ import { useState } from "react";
 const inisialFormState = {
   jenisCuti: '',
   alasanCuti: '',
-  tanggalMulai: '',
-  tanggalSelesai: '',
-  status:"pending"
+  tanggalMulai: null,
+  tanggalSelesai: null,
+  status: "pending"
 
 };
 
-const AjukanCuti = ({ onAdd = () => {} }) => {
+const LeaveRequestForm = ({ onAdd = () => { } }) => {
   const [formCuti, setFormCuti] = useState(inisialFormState);
 
   const handleChange = (e) => {
@@ -24,20 +24,16 @@ const AjukanCuti = ({ onAdd = () => {} }) => {
     }));
   };
 
-  const handleChangeDate = (date)=> {
-    const {startDate, endDate } = date
+  const handleChangeDate = (date) => {
+    const { start, end } = date
     setFormCuti((prev) => ({
-      ...prev, tanggalMulai: startDate, tanggalSelesai: endDate
-
-      
+      ...prev, tanggalMulai: start, tanggalSelesai: end
     }))
-
-
-   }
+  }
 
 
   const handleSubmit = (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
 
     const isAnyFieldEmpty = Object.values(formCuti).some(value => !value);
 
@@ -72,7 +68,7 @@ const AjukanCuti = ({ onAdd = () => {} }) => {
         </div>
         <div className="flex-1">
           <p className="text-xs text-gray-400 font-medium mb-1">Jenis Cuti</p>
-          <select 
+          <select
             className="w-full outline-none font-semibold text-black bg-transparent border-b border-[#E5EBEF] focus:border-[#0081BF] transition-colors pb-1.5 cursor-pointer text-sm"
             name="jenisCuti"
             value={formCuti.jenisCuti}
@@ -105,13 +101,14 @@ const AjukanCuti = ({ onAdd = () => {} }) => {
 
       {/* Dari & Sampai Tanggal */}
       <div className="grid grid-cols-2 gap-6 w-full">
-        
+
         {/* Tanggal Mulai */}
         <div className="flex gap-3.5 items-center min-w-0">
           <div className="flex-1 min-w-0">
             <Calendar
-                onChange={handleChangeDate}
-                label="Atur Tanggal Cuti"
+              onChange={handleChangeDate}
+              label="Atur Tanggal Cuti"
+              value={{ start: formCuti.tanggalMulai, end: formCuti.tanggalSelesai }}
             />
           </div>
         </div>
@@ -119,9 +116,9 @@ const AjukanCuti = ({ onAdd = () => {} }) => {
       </div>
 
       {/* Tombol submit */}
-      <button 
+      <button
         type="button"
-        onClick={handleSubmit} 
+        onClick={handleSubmit}
         className="w-full cursor-pointer bg-[#0081BF] text-white rounded-lg p-3 mt-2 font-semibold text-sm tracking-wide hover:bg-[#00699C] transition-colors shadow-sm"
       >
         Ajukan Cuti
@@ -131,4 +128,4 @@ const AjukanCuti = ({ onAdd = () => {} }) => {
   );
 };
 
-export default AjukanCuti;
+export default LeaveRequestForm
