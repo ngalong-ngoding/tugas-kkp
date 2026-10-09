@@ -1,6 +1,6 @@
 
 
-const jamLembur = 20
+const jamLembur = 30
 const maxLembur = 40
 
 const presentaseLembur = jamLembur / maxLembur * 100
