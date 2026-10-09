@@ -1,21 +1,22 @@
-const Badge = ({ statusValue }) => {
-    const statusLower = (statusValue || 'pending').toLowerCase();
 
-    const variantStyle = {
-        disetujui: "text-white rounded-full bg-green-400", 
-        ditolak: "text-white rounded-full bg-red-400", 
-        pending: "text-white rounded-full bg-yellow-400",
+import cn from "@/utils/cn";
 
-        cuti: "text-gray-700 rounded-full bg-gray-200",
-        hadir: "text-white rounded-full bg-emerald-500",
-        lembur: "text-white rounded-full bg-indigo-500"
-
-
-    }
+const Badge = ({ children, color = "green", className = "" }) => {
+    const colors = {
+        green: "text-green-700 bg-green-200",
+        red: "text-red-700 bg-red-200",
+        yellow: "text-yellow-700 bg-yellow-200",
+    };
 
     return (
-        <span className={`rounded-full px-3 py-1 w-fit text-sm ${variantStyle[statusLower]}`}>{statusValue}</span>
-    )
-}
+        <span
+            className={cn(
+                "rounded-full px-3 py-1 w-fit text-sm",
+                colors[color], className
+            )}>
+            {children}
+        </span>
+    );
+};
 
-export default Badge
+export default Badge;

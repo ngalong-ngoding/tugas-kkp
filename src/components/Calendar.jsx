@@ -1,32 +1,21 @@
 
 
-import {DateField, DateRangePicker, Label, RangeCalendar} from "@heroui/react";
-import { useState } from "react";
+import { DateField, DateRangePicker, Label, RangeCalendar } from "@heroui/react";
 
-const Calendar = ({onChange= ()=> {}, label = "" } ) => {
+const Calendar = ({ onChange = () => { }, label = "", value = null }) => {
 
-  const [dateValue, setdateValue] = useState() 
 
-  
+
   const onChangeDate = (value) => {
-    setdateValue(value)
-console.log(value)
-  onChange(value)
-
-  
-
-      
-    }
+   
+    onChange(value)
+  }
 
   return (
-    <DateRangePicker className="w-80" endName="endDate" startName="startDate" 
-    onChange={onChangeDate}
-    value={dateValue}>
+    <DateRangePicker className="w-80" endName="endDate" startName="startDate"
+      onChange={onChangeDate}
+      value={value}>
       <Label>{label}</Label>
-      <button  onClick={() => setdateValue({
-    "start": "2026-09-01",
-    "end": "2026-09-20"
-})}>Test</button>
       <DateField.Group fullWidth>
         <DateField.Input slot="start">
           {(segment) => <DateField.Segment segment={segment} />}
@@ -61,13 +50,13 @@ console.log(value)
           </RangeCalendar.Grid>
           <RangeCalendar.YearPickerGrid>
             <RangeCalendar.YearPickerGridBody>
-              {({year}) => <RangeCalendar.YearPickerCell year={year} />}
+              {({ year }) => <RangeCalendar.YearPickerCell year={year} />}
             </RangeCalendar.YearPickerGridBody>
           </RangeCalendar.YearPickerGrid>
         </RangeCalendar>
       </DateRangePicker.Popover>
     </DateRangePicker>
-    
+
   );
 }
 

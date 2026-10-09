@@ -1,29 +1,13 @@
 
-const Card = ({title = "",
-   remaining = "",
-   total = "", 
-   icon: Icon,
-   className = "", 
 
-}) => {
-    
+const Card = ({children, title = "", className = ""}) => {
 
-    return(
-        <div className={`bg-old-blue text-white p-6 rounded-3xl shadow-lg w-fit ${className}`}>
-            <div className="flex gap-4 items-center mb-4">
-              <span className="text-white text-lg font-medium">{title}</span>
-              <div className="bg-white/20 p-2.5 rounded-2xl backdrop-blur-md">
-                <Icon/>
-              </div>
-            </div>
-            <div className="flex items-baseline gap-2">
-              <span className="text-5xl font-extrabold tracking-tight">{remaining}</span>
-              <span className="text-xl font-medium text-blue-100 ">{total}</span>
+return (
+    <div className={`w-full rounded-lg bg-white mt-6 pt-4 flex flex-col gap-6${className}`}>
+            <h3 className="text-xl pl-10 font-bold">{title}</h3>       
+        {children}</div>
+)
 
-            </div>
-            </div>
-
-    )
 }
 
-export default Card
+export default Card 
