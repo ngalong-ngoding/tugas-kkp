@@ -1,4 +1,4 @@
- const produksiOktober = {
+ const productionOktober = {
     bulan: "Oktober",
     hariKerja: 22, 
     updatedAt: "04 Oktober 2026, 08:00",
@@ -9,11 +9,8 @@
         {line: "TC", plan: 7523, daily: 342.0},
         {line: "M", plan: 5974, daily: 271.5},
         {line: "TO", plan: 4004, daily: 182.0},
-        {line: "R", plan: 567, daily: 25.8},
-        {line: "Fronterra", plan: 105, daily: 4.8},
-        {line: "Tbs", plan: 12, daily: 0.5},
     ]
 
 }
 
-export default produksiOktober
+export default productionOktober

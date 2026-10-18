@@ -1,9 +1,9 @@
 
 
-const jamLembur = 30
-const maxLembur = 40
+const overtimeHours = 30
+const maxOvertime = 40
 
-const presentaseLembur = jamLembur / maxLembur * 100
+const presentaseLembur = overtimeHours / maxOvertime * 100
 
 
-  export {presentaseLembur, jamLembur, maxLembur} 
+  export {presentaseLembur, overtimeHours, maxOvertime} 

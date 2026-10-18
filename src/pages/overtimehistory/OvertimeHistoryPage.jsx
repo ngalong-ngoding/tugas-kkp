@@ -1,13 +1,11 @@
-import OvertimeHistory from "@/features/overtimehistory/OvertimeHistory"
+import OvertimeHistory from "@/features/overtime-history/OvertimeHistory";
 
 const OvertimeHistoryPage = () => {
+  return (
+    <>
+      <OvertimeHistory />
+    </>
+  );
+};
 
-    return (
-        <>
-
-       <OvertimeHistory/>
-        </>
-    )
-}
-
-export default OvertimeHistoryPage
+export default OvertimeHistoryPage;

@@ -8,6 +8,6 @@
     "moduleResolution": "bundler",
     "target": "esnext"
   },
-  "include": ["src"],
+  "include": ["src", "src/features/dashboard/CardHistory.jsx"],
   "exclude": ["node_modules", "dist"]
 }

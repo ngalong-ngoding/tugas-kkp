@@ -1,13 +1,11 @@
+import cn from "@/utils/cn";
 
+const Card = ({ children, className = "" }) => {
+  return (
+    <div className={cn("w-full rounded-lg bg-white shadow-sm", className)}>
+      {children}
+    </div>
+  );
+};
 
-const Card = ({children, title = "", className = ""}) => {
-
-return (
-    <div className={`w-full rounded-lg bg-white mt-6 pt-4 flex flex-col gap-6${className}`}>
-            <h3 className="text-xl pl-10 font-bold">{title}</h3>       
-        {children}</div>
-)
-
-}
-
-export default Card 
+export default Card;
